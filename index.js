@@ -28,7 +28,7 @@ function fetch_weather() {
     const lng = document.getElementById("lng").value;
 
     // openweather apikey
-    const apiKey = '7db2b9448ce04bc598ceb4ba135d81cd'
+    const apiKey = config.WEATHER_KEY;
     
     // one call api
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&appid=${apiKey}`)
@@ -47,7 +47,7 @@ function fetch_weather() {
 
 // initialize google map and autocomplete feature
 function initMap () {
-    const googlekey = 'AIzaSyAGpoTzBEC4DlcwUMEqSmDde3D75u7dNSo'
+    const googlekey = config.GOOGLE_KEY;
     // initialize map and load Madison, WI by default
     const map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 43.0731, lng: -89.4012},
