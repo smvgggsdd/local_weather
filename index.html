@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Simple Weather App</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="index.js"></script>
+        <script src="https://kit.fontawesome.com/2e77277e1e.js" crossorigin="anonymous"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGpoTzBEC4DlcwUMEqSmDde3D75u7dNSo&libraries=places"></script>
+</script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h2>Weather App</h2>
+            </header>
+            <div id="map" style="display: none;">
+            </div>
+            <div class="form-view">
+                <h1>Local Weather</h1>
+                <form id="weather-search">
+                        <label for="city" class="form-label"></label><br>
+                        <input type="text" id="pac-input" name="city" aria-describedby="cityHelp" placeholder="Enter your city">
+                        <input type="hidden" id="lat" value="43.0731">
+                        <input type="hidden" id="lng" value="-89.4012">
+                        <input type="hidden" id="hourly-json">
+                        <input type="hidden" id="daily-json">
+                </form>
+            </div>
+            <div class="current-view" style="display: none;">
+                <div class="location-info">
+                    <h2 id="city">Madison, WI</h2>
+                    <h4 id="current_day">Wednesday</h4>
+                    <h4 id="current_conditions">Partly Cloudy</h4>
+                </div>
+                <div class="temperature">
+                    <div class="large_temp">
+                        <h1 class="temp-header temp_unit" id="current_temp">100</h1>
+                        <div id="current_unit" class="degrees" data-unit="fahrenheit">
+                            <span class="pointer"><span>&deg;</span><span class="unit_selector" id="fahrenheit">F</span></span>
+                            <span>|</span>
+                            <span class="pointer"><span>&deg;</span><span class="unit_selector" id="celsius">C</span></span>
+                        </div>
+                    </div>
+                    <img class="large_img" id="current_icon" src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <div class="info">
+                        <p>Precipitation: <span id="precip">10</span>%</p>
+                        <p>Humidity: <span id="humidity">46</span>%</p>
+                        <p>Wind: <span id="wind">21</span> km/h</p>
+                    </div>
+                </div>   
+            </div>
+        <div class = "bottom card" id="forecast-view" style="display: none;">
+            <div class = "forecast">
+                <h2>Forecast</h2>
+                <button class="button button-clicked" id="hourly">Hourly</button>
+                <button class="button" id="daily">Daily</button>
+            </div>
+
+            <div class="weather_view">
+                <div class="item">
+                    <h3>
+                        Mon
+                    </h3>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <div>
+                        <span><strong>32</strong>&deg;</span>
+                        <span>22&deg;</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <h3>
+                        Mon
+                    </h3>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <div>
+                        <span>32&deg;</span>
+                        <span>22&deg;</span>
+                    </div>
+                </div>                <div class="item">
+                    <h3>
+                        Mon
+                    </h3>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <div>
+                        <span>32&deg;</span>
+                        <span>22&deg;</span>
+                    </div>
+                </div>                <div class="item">
+                    <h3>
+                        Mon
+                    </h3>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <div>
+                        <span>32&deg;</span>
+                        <span>22&deg;</span>
+                    </div>
+                </div>                <div class="item">
+                    <h3>
+                        Mon
+                    </h3>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <div>
+                        <span>32&deg;</span>
+                        <span>22&deg;</span>
+                    </div>
+                </div>                <div class="item">
+                    <h3>
+                        Mon
+                    </h3>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <div>
+                        <span>32&deg;</span>
+                        <span>22&deg;</span>
+                    </div>
+                </div>                <div class="item">
+                    <h3>
+                        Mon
+                    </h3>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <div>
+                        <span>32&deg;</span>
+                        <span>22&deg;</span>
+                    </div>
+                </div>                <div class="item">
+                    <h3>
+                        Mon
+                    </h3>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <div>
+                        <span>32&deg;</span>
+                        <span>22&deg;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p><em>Demo Site 2021</em></p>
+        </footer>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,266 @@
+/* General Styles */
+
+:root {
+    --card-color: #7A8377;
+    --main-div-color: #F2F3F1;
+    --header-color: #99B0A5;
+    --button-color: rgb(109, 172, 255);
+    --button-focused:  rgb(20, 114, 236);
+    --background-color: #323145;
+  }
+  
+  header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid rgb(133, 133, 133);
+    background: var(--header-color);
+  }
+  header>h2 {
+      margin-left: 10px;
+      display: inline-block;
+  }
+  body {
+    margin: 0 auto;
+    font-family:Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+  }
+  
+  main {
+    display: grid;
+    grid-gap: 2em;
+    grid: 'header' auto
+          'form' auto
+          'current' auto
+          'bottom' auto
+          'map' auto
+          'footer' auto
+          /1fr;
+    min-height: 100vh;
+  }
+  
+  .button {
+    display: inline;
+    height: 40px;
+    width: 120px;
+    background-color:var(--button-color);
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+  }
+  
+  input[type="text"] {
+      border: 1px;
+      height: 30px;
+      font-size: 1rem;
+      width: 100%;
+  }
+  
+  .button:hover {
+    background-color: var(--button-focused);
+  }
+  
+  .button:active {
+    background-color: var(--button-color);
+  }
+  
+  .button-clicked {
+    background-color: var(--button-focused);
+  }
+  
+  h1 {
+    font-weight: bolder;
+    font-size: 2.5em;
+  }
+  
+  .bottom {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+  }
+  
+  .card {
+    background: var(--main-div-color);
+    border-radius: 10px;
+    margin-right: 5px;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  footer>p {
+    color: grey;
+    margin:auto;
+  }
+  
+  .form-view {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--header-color);
+    grid-column-start: 2;
+    max-width: 400px;
+  }
+
+  .forecast>h2 {
+      display: inline;
+  }
+
+  .forecast {
+      margin-left: 5px;
+  }
+  .pointer:hover {
+      cursor: pointer;
+  }
+
+  #forecast-view {
+      max-width: 900px;
+  }
+  
+  #current_conditions::first-letter {
+      text-transform: uppercase;
+  }
+  
+  #weather-search {
+      max-width: 273px;
+  }
+  /* current weather */
+  .current-view {
+      height: 100%;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      border: 1px solid black;
+      background-color: var(--main-div-color);
+      justify-self: start;
+  }
+  
+  .location-info {
+      line-height: 5px;
+      margin-left: 5px;
+      background-color: var(--main-div-color);
+  }
+  
+  .location-info>h4 {
+      font-weight: lighter;
+  }
+
+  .temperature {
+    border: 1px solid black;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 0px;
+    width: 100%;
+    background-color: var(--card-color);
+  }
+  
+  .info {
+    width: 40%;
+    min-width: 132px;
+    height: 100%;
+    line-height: 0px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+  }
+
+  .info>p {
+      float: right;
+  }
+  
+  .temp-header {
+    font-size: 5em;
+    /*4em */
+    font-weight: lighter;
+    display: inline-block;
+
+  }
+  
+  .degrees {
+    display: inline;
+    align-self: flex-start;
+    margin-top: 14px;
+  }
+
+  .large_temp {
+      min-width: 140.64px;
+      display: flex;
+      height: 92px;
+      align-items: center;
+      margin-left: 10px;
+  }
+  
+  .large_img {
+    display: inline;
+    float: left;
+    position: relative;
+    /* width:150px */
+  }
+  
+  .weather_view {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+  
+  .item {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    transition: transform .5s;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--card-color);
+  }
+  
+  .item:hover {
+      transform: translateY(-10px);
+  }
+  
+  @media (min-width: 40em) {
+      #map {
+        height: 100%;
+        min-width: 250px;
+        width: 100%;
+        max-width: 400px;
+        margin: auto 0 auto auto;
+    
+      }
+      main {
+          grid: 'header header header' 100px
+                'map form current' auto
+                'map bottom bottom' auto
+                'footer footer footer' 100px
+                /1fr 1fr 1fr;
+      }
+    
+      .weather_view{
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+  
+      .item {
+          flex-direction: column;
+
+      }
+  }
+    
+  header { grid-area: header; }
+  .form_view { grid-area: form; }
+  .current-view { grid-area: current; }
+  .bottom { grid-area: bottom; }
+  footer { grid-area: footer; }
+  #map { grid-area: map; }
